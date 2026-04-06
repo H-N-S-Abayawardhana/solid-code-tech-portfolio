@@ -4,6 +4,22 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import {
+  DEFAULT_VIDEO_PLAYBACK_RATE,
+  VideoHeroDecorativeLayers,
+  VideoHeroMedia,
+  VIDEO_HERO_BAND_CLASS,
+  VIDEO_HERO_HEADER_OVERLAP_CLASS,
+} from "@/components/sections/VideoHeroMedia";
+import {
+  VIDEO_HERO_CONTAINER_CLASS,
+  VIDEO_HERO_COPY_WRAP_CLASS,
+  VIDEO_HERO_CTA_ROW_CLASS,
+  VIDEO_HERO_HEADLINE_CLASS,
+  VIDEO_HERO_PRIMARY_BTN_CLASS,
+  VIDEO_HERO_SECONDARY_BTN_CLASS,
+  VIDEO_HERO_SUBTEXT_CLASS,
+} from "@/components/sections/videoHeroContent";
 import { homeHero } from "@/data/home";
 import { site } from "@/lib/site";
 
@@ -25,81 +41,73 @@ const item = {
   },
 };
 
-function HeroInner({ animated }: { animated: boolean }) {
-  const blocks = (
+const HOME_VIDEO_SRC = "/174086-850404739.mp4";
+const HOME_POSTER_SRC = "/heroimg.jpg";
+
+function HeroOnImage({ animated }: { animated: boolean }) {
+  const sub = homeHero.subheading?.trim();
+  const main = (
     <>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs">
-        {homeHero.eyebrow}
-      </p>
-      <h1
-        id="hero-heading"
-        className="mt-5 font-display text-[2rem] font-semibold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]"
-      >
+      <h1 id="hero-heading" className={VIDEO_HERO_HEADLINE_CLASS}>
         {homeHero.headline}
       </h1>
-      <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-        {homeHero.subheading}
-      </p>
-      <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <ButtonLink href="/contact">{homeHero.ctaPrimary}</ButtonLink>
-        <ButtonLink href="/portfolio" variant="secondary">
+      {sub ? (
+        <p className={VIDEO_HERO_SUBTEXT_CLASS}>{sub}</p>
+      ) : null}
+      <div className={VIDEO_HERO_CTA_ROW_CLASS}>
+        <ButtonLink href="/contact" className={VIDEO_HERO_PRIMARY_BTN_CLASS}>
+          {homeHero.ctaPrimary}
+        </ButtonLink>
+        <ButtonLink
+          href="/services"
+          variant="secondary"
+          className={VIDEO_HERO_SECONDARY_BTN_CLASS}
+        >
           {homeHero.ctaSecondary}
         </ButtonLink>
       </div>
-      <p className="mt-10 max-w-xl text-sm leading-relaxed text-stone-500">
-        {homeHero.footnote}
-        <Link
-          href="/process"
-          className="font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent"
-        >
-          {homeHero.footnoteLinkLabel}
-        </Link>
-        .
-      </p>
-      <p className="mt-3 text-xs text-stone-400">{site.name}</p>
     </>
   );
 
   if (!animated) {
-    return <div className="max-w-3xl">{blocks}</div>;
+    return <div className={VIDEO_HERO_COPY_WRAP_CLASS}>{main}</div>;
   }
 
   return (
     <motion.div
-      className="max-w-3xl"
+      className={VIDEO_HERO_COPY_WRAP_CLASS}
       variants={container}
       initial="hidden"
       animate="show"
     >
-      <motion.p variants={item} className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs">
-        {homeHero.eyebrow}
-      </motion.p>
-      <motion.h1
-        variants={item}
-        id="hero-heading"
-        className="mt-5 font-display text-[2rem] font-semibold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]"
-      >
+      <motion.h1 variants={item} id="hero-heading" className={VIDEO_HERO_HEADLINE_CLASS}>
         {homeHero.headline}
       </motion.h1>
-      <motion.p
-        variants={item}
-        className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
-      >
-        {homeHero.subheading}
-      </motion.p>
-      <motion.div
-        variants={item}
-        className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-      >
-        <ButtonLink href="/contact">{homeHero.ctaPrimary}</ButtonLink>
-        <ButtonLink href="/portfolio" variant="secondary">
+      {sub ? (
+        <motion.p variants={item} className={VIDEO_HERO_SUBTEXT_CLASS}>
+          {sub}
+        </motion.p>
+      ) : null}
+      <motion.div variants={item} className={VIDEO_HERO_CTA_ROW_CLASS}>
+        <ButtonLink href="/contact" className={VIDEO_HERO_PRIMARY_BTN_CLASS}>
+          {homeHero.ctaPrimary}
+        </ButtonLink>
+        <ButtonLink
+          href="/services"
+          variant="secondary"
+          className={VIDEO_HERO_SECONDARY_BTN_CLASS}
+        >
           {homeHero.ctaSecondary}
         </ButtonLink>
       </motion.div>
-      <motion.p
-        variants={item}
-        className="mt-10 max-w-xl text-sm leading-relaxed text-stone-500"
-      >
+    </motion.div>
+  );
+}
+
+function HeroBelowImage() {
+  return (
+    <div className="max-w-2xl xl:max-w-3xl">
+      <p className="text-[15px] leading-relaxed text-stone-600 sm:text-base">
         {homeHero.footnote}
         <Link
           href="/process"
@@ -108,11 +116,9 @@ function HeroInner({ animated }: { animated: boolean }) {
           {homeHero.footnoteLinkLabel}
         </Link>
         .
-      </motion.p>
-      <motion.p variants={item} className="mt-3 text-xs text-stone-400">
-        {site.name}
-      </motion.p>
-    </motion.div>
+      </p>
+      <p className="mt-2 text-xs font-medium uppercase tracking-wider text-stone-400">{site.name}</p>
+    </div>
   );
 }
 
@@ -121,25 +127,30 @@ export function HomeHero() {
 
   return (
     <section
-      className="relative overflow-hidden border-b border-border bg-background"
+      className={`border-b border-border ${VIDEO_HERO_HEADER_OVERLAP_CLASS}`}
       aria-labelledby="hero-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.28]"
-        aria-hidden
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(to right, rgb(231 229 228 / 0.55) 1px, transparent 1px),
-              linear-gradient(to bottom, rgb(231 229 228 / 0.55) 1px, transparent 1px)`,
-            backgroundSize: "72px 72px",
-          }}
-        />
+      <div className={VIDEO_HERO_BAND_CLASS}>
+        <div className="pointer-events-none absolute inset-0">
+          <VideoHeroMedia
+            videoSrc={HOME_VIDEO_SRC}
+            posterSrc={HOME_POSTER_SRC}
+            playbackRate={DEFAULT_VIDEO_PLAYBACK_RATE}
+            prefersReducedMotion={reduce ?? false}
+          />
+        </div>
+        <VideoHeroDecorativeLayers />
+
+        <Container className={VIDEO_HERO_CONTAINER_CLASS}>
+          <HeroOnImage animated={!reduce} />
+        </Container>
       </div>
-      <Container className="relative py-20 md:py-28 lg:py-32">
-        <HeroInner animated={!reduce} />
-      </Container>
+
+      <div className="border-t border-border bg-stone-50/90">
+        <Container className="pt-12 pb-8 md:pt-14 md:pb-9 lg:pt-16 lg:pb-10">
+          <HeroBelowImage />
+        </Container>
+      </div>
     </section>
   );
 }

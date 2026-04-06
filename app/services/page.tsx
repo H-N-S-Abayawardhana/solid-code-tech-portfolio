@@ -2,32 +2,19 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { ServicesHero } from "@/components/sections/ServicesHero";
 import { services } from "@/data/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: `${site.name} offers custom software, web and mobile development, UI/UX, cloud, integrations, e-commerce, and ongoing support for international clients.`,
+  description: `${site.name} delivers web development, mobile apps, cloud & DevOps, AI/ML, UI/UX design, and custom software for startups, SMBs, and enterprises.`,
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="border-b border-border bg-stone-50 py-16 md:py-20">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Services
-          </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium tracking-tight text-stone-900 md:text-5xl">
-            Capabilities that cover the full product lifecycle.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            Each engagement is scoped to your context. Below is how we typically
-            structure offerings—benefits you can evaluate, and client profiles
-            that tend to see the strongest fit.
-          </p>
-        </Container>
-      </section>
+      <ServicesHero />
 
       <section className="py-16 md:py-20" aria-label="Service details">
         <Container className="space-y-16 md:space-y-24">
