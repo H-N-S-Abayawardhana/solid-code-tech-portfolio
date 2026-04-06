@@ -1,26 +1,7 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { homeSections } from "@/data/home";
-
-const points = [
-  {
-    title: "Engineering standards",
-    body: "Peer review, automated checks, and staging environments that mirror production. Fewer late surprises and cleaner releases.",
-  },
-  {
-    title: "Clear commercial shape",
-    body: "Milestones tie to outcomes you can report upward. Scope changes go through a written change path, not informal backlog growth.",
-  },
-  {
-    title: "Design and engineering together",
-    body: "Product designers sit with engineers through build so interfaces stay usable, accessible, and technically coherent.",
-  },
-  {
-    title: "After go-live",
-    body: "Maintenance windows, minor enhancements, and documentation are part of the engagement—not a handover slide deck on the last day.",
-  },
-];
+import { homeSections, whyChooseUsPoints } from "@/data/home";
 
 export function WhyChooseUs() {
   return (
@@ -35,8 +16,8 @@ export function WhyChooseUs() {
           title={homeSections.whyUs.title}
           description={homeSections.whyUs.description}
         />
-        <ol className="grid gap-8 md:grid-cols-2 md:gap-x-12 md:gap-y-10">
-          {points.map((p, i) => (
+        <ol className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:gap-x-12 md:gap-y-10">
+          {whyChooseUsPoints.map((p, i) => (
             <li key={p.title}>
               <Reveal delay={0.05 * i}>
                 <article className="flex gap-5">

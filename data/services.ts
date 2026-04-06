@@ -1,3 +1,12 @@
+/** Services page video hero — copy + paths (layout matches home hero). */
+export const servicesPageHero = {
+  videoSrc: "/services-hero.mp4",
+  posterSrc: "/heroimg.jpg",
+  title: "Capabilities that cover the full product lifecycle.",
+  belowStrip:
+    "Each engagement is scoped to your context. Below is how we typically structure offerings—benefits you can evaluate, and client profiles that tend to see the strongest fit. Questions about scope or timelines? We are happy to recommend a sensible first step.",
+} as const;
+
 export type Service = {
   id: string;
   title: string;
@@ -9,124 +18,94 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    id: "web-development",
+    title: "Web Development",
+    summary:
+      "Fast, responsive, and scalable web applications tailored to your business goals.",
+    description:
+      "We design and develop fast, responsive, and scalable web applications tailored to your business goals. From marketing websites to complex SaaS platforms, we bring your web presence to life with modern frameworks and clean architecture.",
+    benefits: [
+      "Performance-focused builds with maintainable architecture",
+      "Responsive experiences from marketing sites to complex SaaS",
+      "Modern stacks aligned with your scale and integration needs",
+    ],
+    idealClients:
+      "Teams launching or growing browser-based products, customer portals, and internal platforms.",
+  },
+  {
+    id: "mobile-app-development",
+    title: "Mobile App Development",
+    summary:
+      "Intuitive iOS and Android apps—native and cross-platform—with reliable, polished UX.",
+    description:
+      "We build intuitive mobile applications for iOS and Android — native and cross-platform. Whether it's a customer-facing app or an internal tool, we deliver smooth, reliable experiences that users love.",
+    benefits: [
+      "Native and cross-platform options matched to your roadmap",
+      "Secure auth, offline-aware flows, and store-ready releases",
+      "Shared models with web backends where it reduces duplication",
+    ],
+    idealClients:
+      "Brands and B2B teams extending products to customers and staff in the field.",
+  },
+  {
+    id: "cloud-devops",
+    title: "Cloud & DevOps",
+    summary:
+      "Infrastructure that scales with you—AWS, GCP, CI/CD, containers, and observability.",
+    description:
+      "We architect and manage cloud infrastructure that scales with your business. From AWS and Google Cloud to CI/CD pipelines, Docker, and Kubernetes — we ensure your systems are fast, secure, and always available.",
+    benefits: [
+      "Infrastructure-as-code and environment parity",
+      "CI/CD pipelines for safe, frequent releases",
+      "Monitoring, backups, and security-minded operations",
+    ],
+    idealClients:
+      "Organizations modernizing hosting, launching SaaS, or tightening reliability and delivery.",
+  },
+  {
+    id: "ai-ml",
+    title: "AI / ML Solutions",
+    summary:
+      "LLM-powered features, automation, analytics, and vision—integrated into your product.",
+    description:
+      "We integrate artificial intelligence and machine learning into your products — from LLM-powered chatbots and automation tools to predictive analytics and computer vision systems. Smart software for the modern world.",
+    benefits: [
+      "Practical AI use cases scoped to real workflows",
+      "Integration with your data, APIs, and compliance constraints",
+      "Evaluation, monitoring, and iteration—not one-off demos",
+    ],
+    idealClients:
+      "Product teams adding intelligence, automation, or analytics to customer and internal tools.",
+  },
+  {
+    id: "ui-ux-design",
+    title: "UI/UX Design",
+    summary:
+      "Beautiful, intuitive, conversion-focused experiences grounded in research and testing.",
+    description:
+      "We create user experiences that are beautiful, intuitive, and conversion-focused. Our design process includes research, wireframing, prototyping, and testing — ensuring every interaction feels effortless.",
+    benefits: [
+      "Research-backed information architecture and flows",
+      "Prototypes that align stakeholders before engineering",
+      "Design systems developers can implement faithfully",
+    ],
+    idealClients:
+      "Teams shipping new products, redesigns, or needing a disciplined design-to-build handoff.",
+  },
+  {
     id: "custom-software",
-    title: "Custom software development",
+    title: "Custom Software Development",
     summary:
-      "Purpose-built systems that match how your organisation actually works.",
+      "Bespoke systems—ERPs, CRMs, automation, APIs, and proprietary platforms—for your workflows.",
     description:
-      "We engineer applications around your workflows, data, and compliance requirements—so you are not forced to reshape the business around an off-the-shelf product.",
+      "Every business has unique challenges. We build bespoke software solutions — ERPs, CRMs, automation tools, API integrations, and proprietary platforms — engineered precisely to fit your workflows and operations.",
     benefits: [
-      "Architecture aligned with growth and integration needs",
-      "Clear ownership of code, documentation, and environments",
-      "Security and performance considered from day one",
+      "Workflow-aligned domain models and integrations",
+      "Clear ownership of code, docs, and environments",
+      "Security and scalability considered from day one",
     ],
     idealClients:
-      "Mid-size and enterprise teams replacing spreadsheets, legacy tools, or fragmented internal systems.",
-  },
-  {
-    id: "web-applications",
-    title: "Web application development",
-    summary:
-      "Fast, resilient web products for customers, partners, and internal teams.",
-    description:
-      "From customer-facing platforms to operational consoles, we deliver interfaces that stay responsive under load and remain maintainable as features evolve.",
-    benefits: [
-      "Modern front ends with disciplined state and accessibility",
-      "APIs designed for stability and clear versioning",
-      "Deployment pipelines that support frequent, safe releases",
-    ],
-    idealClients:
-      "Product companies and in-house IT groups launching or scaling browser-based software.",
-  },
-  {
-    id: "mobile-apps",
-    title: "Mobile app development",
-    summary:
-      "Native-quality experiences on iOS and Android, built for real-world use.",
-    description:
-      "We build mobile products with offline awareness, secure authentication, and analytics hooks where they matter—without unnecessary complexity.",
-    benefits: [
-      "Thoughtful navigation and performance on mid-range devices",
-      "Store-ready release process and update strategy",
-      "Shared domain models with web backends where appropriate",
-    ],
-    idealClients:
-      "Brands and B2B providers extending their service to the field, retail floor, or on-the-go professionals.",
-  },
-  {
-    id: "ui-ux",
-    title: "UI / UX design",
-    summary:
-      "Interfaces that reduce friction and reinforce trust in your product.",
-    description:
-      "We combine research-backed structure with restrained visual design—so screens feel familiar to international users and credible to executives.",
-    benefits: [
-      "Component libraries that scale across teams",
-      "Prototypes that align stakeholders before build",
-      "Design systems that developers can implement faithfully",
-    ],
-    idealClients:
-      "Teams preparing a new product, redesign, or design-to-development handover.",
-  },
-  {
-    id: "cloud",
-    title: "Cloud-based solutions",
-    summary:
-      "Reliable hosting, scaling, and observability without vendor lock-in by default.",
-    description:
-      "We help you choose and operate cloud services that fit your budget, region, and regulatory context—then document how everything fits together.",
-    benefits: [
-      "Infrastructure as code and environment parity",
-      "Cost visibility and right-sizing recommendations",
-      "Backups, monitoring, and incident-ready runbooks",
-    ],
-    idealClients:
-      "Organisations modernising infrastructure or launching SaaS offerings.",
-  },
-  {
-    id: "api-integrations",
-    title: "API integrations",
-    summary:
-      "Connect your product to payments, CRM, ERP, and industry-specific platforms.",
-    description:
-      "We map data flows, handle authentication edge cases, and build retries and logging so integrations fail gracefully—not silently.",
-    benefits: [
-      "Mapping and validation of third-party contracts",
-      "Idempotent jobs and clear error surfaces for support teams",
-      "Documentation for future engineers and partners",
-    ],
-    idealClients:
-      "Companies stitching together best-of-breed tools or exposing their own APIs to partners.",
-  },
-  {
-    id: "ecommerce",
-    title: "E-commerce solutions",
-    summary:
-      "Stores and B2B ordering flows that convert and integrate with operations.",
-    description:
-      "We implement storefronts, catalogues, and checkout experiences with inventory, tax, and fulfilment systems in mind.",
-    benefits: [
-      "Performance-focused product and search experiences",
-      "Integration with ERP, WMS, and marketing stacks",
-      "Testing plans for promotions and peak traffic",
-    ],
-    idealClients:
-      "Retailers, manufacturers selling direct, and distributors digitising repeat orders.",
-  },
-  {
-    id: "maintenance",
-    title: "Software maintenance and support",
-    summary:
-      "Keep production systems current, secure, and understandable.",
-    description:
-      "Beyond break-fix work, we offer structured maintenance: dependency updates, security patches, minor enhancements, and knowledge transfer.",
-    benefits: [
-      "Defined response times and escalation paths",
-      "Release notes and change records stakeholders can follow",
-      "Roadmap input based on usage and incident trends",
-    ],
-    idealClients:
-      "Teams who inherited a codebase or need a steady partner after launch.",
+      "Organizations replacing spreadsheets, legacy tools, or fragmented systems with purpose-built software.",
   },
 ];
 

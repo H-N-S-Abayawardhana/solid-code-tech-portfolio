@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/motion/Reveal";
+import { AboutHero } from "@/components/sections/AboutHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -50,21 +51,7 @@ const leadership = [
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b border-border bg-stone-50 py-16 md:py-20">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            About us
-          </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium tracking-tight text-stone-900 md:text-5xl">
-            A software partner for organisations that cannot afford ambiguity.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            {site.name} exists to help businesses ship reliable digital products
-            and internal systems—with engineering judgement, design craft, and
-            communication that stands up in board-level conversations.
-          </p>
-        </Container>
-      </section>
+      <AboutHero />
 
       <section className="py-16 md:py-24" aria-labelledby="intro-heading">
         <Container>
@@ -136,7 +123,6 @@ export default function AboutPage() {
           <SectionHeader
             titleId="why-exists-heading"
             title="Why we exist"
-            description="Too many programmes fail for predictable reasons: opaque scope, weak integration planning, and vendors who disappear after launch. We built Solid Code Technology to offer a different experience—measured, accountable, and technically serious."
           />
           <Reveal>
             <div className="rounded-lg border border-border bg-stone-50/80 p-8 md:p-10">

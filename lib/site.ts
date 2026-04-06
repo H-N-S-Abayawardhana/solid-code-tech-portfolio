@@ -1,10 +1,10 @@
 export const site = {
-  name: "Solid Code Technology",
-  shortName: "Solid Code",
+  name: "SolidCode Technologies",
+  shortName: "SolidCode",
   logoSrc: "/solidcodelogo.png",
-  tagline: "Software engineered for serious outcomes.",
+  tagline: "Built solid. Built to scale.",
   description:
-    "Solid Code Technology designs and builds custom software, web and mobile applications, and cloud solutions for organisations worldwide.",
+    "SolidCode Technologies is a full-stack software engineering company delivering web applications, mobile apps, cloud infrastructure, AI solutions, UI/UX design, and custom software.",
   url: "https://solidcodetechnology.com",
   email: "hello@solidcodetechnology.com",
   phone: "+1 (555) 014-2200",
