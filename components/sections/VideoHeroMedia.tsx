@@ -1,14 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { LazyVideo } from "lazyvid";
+import { useEffect } from "react";
 
-/** Same band height as home hero — keep pages visually aligned. */
+/** `lazyvid` keeps an internal ref; we target the element by id for playback-rate hooks. */
+const VIDEO_HERO_DOM_ID = "solidcode-hero-video";
+
+/** Same band height as home hero — keep pages visually aligned. Uses svh/dvh for mobile browser chrome. */
 export const VIDEO_HERO_BAND_CLASS =
-  "relative h-[min(78vh,820px)] min-h-[520px] max-h-[920px] w-full overflow-hidden";
+  "relative h-[min(78svh,820px)] min-h-[380px] max-h-[920px] w-full overflow-hidden sm:min-h-[460px] md:min-h-[520px]";
 
-/** Matches `Header` (`h-16` / `md:h-20`). Pulls the band under the transparent bar so video shows through. */
-export const VIDEO_HERO_HEADER_OVERLAP_CLASS = "-mt-16 md:-mt-20";
+/** Matches `Header` bar + safe-area. Pulls the band under the transparent bar so video shows through. */
+export const VIDEO_HERO_HEADER_OVERLAP_CLASS =
+  "-mt-[calc(4rem+env(safe-area-inset-top,0px))] md:-mt-[calc(5rem+env(safe-area-inset-top,0px))]";
 
 export const DEFAULT_VIDEO_PLAYBACK_RATE = 0.3;
 
@@ -26,11 +31,11 @@ export function VideoHeroMedia({
   playbackRate = DEFAULT_VIDEO_PLAYBACK_RATE,
   prefersReducedMotion,
 }: VideoHeroMediaProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
     if (prefersReducedMotion) return;
-    const v = videoRef.current;
+    const v = document.getElementById(
+      VIDEO_HERO_DOM_ID,
+    ) as HTMLVideoElement | null;
     if (!v) return;
 
     const applyRate = () => {
@@ -75,18 +80,19 @@ export function VideoHeroMedia({
   }
 
   return (
-    <video
-      ref={videoRef}
+    <LazyVideo
+      key={videoSrc}
+      id={VIDEO_HERO_DOM_ID}
       className="absolute inset-0 h-full w-full object-cover object-center"
+      sources={[{ type: "video/mp4", src: videoSrc }]}
       autoPlay
       muted
       loop
       playsInline
       poster={posterSrc}
+      preload="none"
       aria-hidden
-    >
-      <source src={videoSrc} type="video/mp4" />
-    </video>
+    />
   );
 }
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Logo } from "@/components/brand/Logo";
 import { mainNav } from "@/data/navigation";
@@ -56,20 +56,47 @@ function NavLink({
   );
 }
 
+/** Always show the bar when within this many px of the top (hero / page start). */
+const SCROLL_SHOW_TOP_PX = 56;
+/** Min scroll delta to count as direction (filters jitter). */
+const SCROLL_DIR_THRESHOLD_PX = 8;
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [pastHero, setPastHero] = useState(false);
+  const [hiddenByScroll, setHiddenByScroll] = useState(false);
+  const lastScrollY = useRef(0);
   const reduce = useReducedMotion();
 
   const lightNav = isVideoHeroRoute(pathname) && !pastHero;
 
   useEffect(() => {
-    const threshold = () =>
+    lastScrollY.current =
+      typeof window !== "undefined" ? window.scrollY : 0;
+    setHiddenByScroll(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const heroThreshold = () =>
       Math.min(520, window.innerHeight * 0.68);
 
     const update = () => {
-      setPastHero(window.scrollY > threshold());
+      const y = window.scrollY;
+      const prev = lastScrollY.current;
+      const delta = y - prev;
+
+      setPastHero(y > heroThreshold());
+
+      if (y <= SCROLL_SHOW_TOP_PX) {
+        setHiddenByScroll(false);
+      } else if (delta > SCROLL_DIR_THRESHOLD_PX) {
+        setHiddenByScroll(true);
+      } else if (delta < -SCROLL_DIR_THRESHOLD_PX) {
+        setHiddenByScroll(false);
+      }
+
+      lastScrollY.current = y;
     };
 
     update();
@@ -90,9 +117,23 @@ export function Header() {
     };
   }, [open]);
 
+  const hideHeader = hiddenByScroll && !open;
+  const headerMotion = reduce
+    ? ""
+    : "transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]";
+
   return (
-    <header className="sticky top-0 z-50 border-b border-transparent bg-transparent">
-      <Container className="flex h-16 items-center justify-between gap-4 md:h-20">
+    <>
+      <div
+        className="shrink-0 h-[calc(4rem+env(safe-area-inset-top,0px))] md:h-[calc(5rem+env(safe-area-inset-top,0px))]"
+        aria-hidden
+      />
+      <header
+        className={`fixed left-0 right-0 top-0 z-50 border-b border-transparent bg-transparent pt-[env(safe-area-inset-top,0px)] ${headerMotion} ${
+          hideHeader ? "-translate-y-full pointer-events-none" : "translate-y-0"
+        }`}
+      >
+      <Container className="flex h-16 items-center justify-between gap-3 sm:gap-4 md:h-20">
         <Logo variant="header" />
 
         <nav
@@ -113,7 +154,7 @@ export function Header() {
           <ButtonLink
             href="/contact"
             variant="primary"
-            className="px-4 py-2.5 text-[13px] font-semibold tracking-wide"
+            className="border border-[#050a30] !bg-white px-4 py-2.5 text-[13px] font-semibold tracking-wide !text-[#050a30] shadow-sm hover:!bg-stone-50 hover:!text-[#050a30] focus-visible:ring-[#050a30]"
           >
             Start a project
           </ButtonLink>
@@ -186,7 +227,8 @@ export function Header() {
               <div className="pt-2">
                 <ButtonLink
                   href="/contact"
-                  className="w-full"
+                  variant="primary"
+                  className="w-full border border-[#050a30] !bg-white !text-[#050a30] shadow-sm hover:!bg-stone-50 hover:!text-[#050a30] focus-visible:ring-[#050a30]"
                   onClick={() => setOpen(false)}
                 >
                   Start a project
@@ -197,5 +239,6 @@ export function Header() {
         ) : null}
       </AnimatePresence>
     </header>
+    </>
   );
 }

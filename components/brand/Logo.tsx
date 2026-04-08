@@ -10,13 +10,16 @@ type LogoProps = {
 };
 
 const dimensions = {
-  header: { w: 260, h: 60 },
+  header: { w: 400, h: 92 },
   footer: { w: 220, h: 52 },
 } as const;
 
 export function Logo({ variant = "header", className = "" }: LogoProps) {
   const { w, h } = dimensions[variant];
-  const heightClass = variant === "header" ? "h-11 sm:h-12" : "h-10 sm:h-11";
+  const heightClass =
+    variant === "header"
+      ? "h-[3.75rem] sm:h-16 md:h-[4.75rem]"
+      : "h-10 sm:h-11";
 
   return (
     <Link
@@ -30,7 +33,7 @@ export function Logo({ variant = "header", className = "" }: LogoProps) {
         width={w}
         height={h}
         priority={variant === "header"}
-        className={`w-auto max-w-[min(100%,16rem)] object-contain object-left ${heightClass} sm:max-w-[17.5rem]`}
+        className={`w-auto max-w-[min(100%,14rem)] object-contain object-left sm:max-w-[min(100%,22rem)] md:max-w-[28rem] ${heightClass}`}
       />
     </Link>
   );

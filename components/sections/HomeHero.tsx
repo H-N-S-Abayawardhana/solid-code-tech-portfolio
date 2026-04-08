@@ -59,7 +59,7 @@ function HeroOnImage({ animated }: { animated: boolean }) {
           {homeHero.ctaPrimary}
         </ButtonLink>
         <ButtonLink
-          href="/services"
+          href={homeHero.ctaSecondaryHref}
           variant="secondary"
           className={VIDEO_HERO_SECONDARY_BTN_CLASS}
         >
@@ -93,7 +93,7 @@ function HeroOnImage({ animated }: { animated: boolean }) {
           {homeHero.ctaPrimary}
         </ButtonLink>
         <ButtonLink
-          href="/services"
+          href={homeHero.ctaSecondaryHref}
           variant="secondary"
           className={VIDEO_HERO_SECONDARY_BTN_CLASS}
         >

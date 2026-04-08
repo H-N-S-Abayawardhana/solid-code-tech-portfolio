@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description: `Contact ${site.name} for business inquiries, project discussions, and partnership questions. Email, phone, and office placeholders included.`,
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -16,10 +17,10 @@ export default function ContactPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Contact
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium tracking-tight text-stone-900 md:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl md:text-5xl">
             Start with a focused conversation.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
             Share enough context for us to prepare useful questions. If we are
             not the right fit, we will say so and, where possible, suggest
             alternatives.

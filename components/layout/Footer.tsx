@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-stone-200 bg-stone-100/80">
       <div
-        className="pointer-events-none absolute left-0 right-0 top-0 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-accent/35 to-transparent"
+        className="pointer-events-none absolute left-0 right-0 top-0 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-accent/35 to-transparent 2xl:max-w-7xl"
         aria-hidden
       />
       <Container className="py-16 md:py-20">

@@ -13,7 +13,7 @@ export function FinalCta() {
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-center">
             <div className="max-w-xl">
-              <h2 className="font-display text-3xl font-semibold tracking-tight text-white md:text-4xl">
+              <h2 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
                 {copy.title}
               </h2>
               <p className="mt-4 text-base leading-relaxed text-stone-400">

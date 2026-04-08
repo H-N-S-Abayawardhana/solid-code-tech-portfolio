@@ -7,8 +7,9 @@ import { services } from "@/data/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description: `${site.name} delivers web development, mobile apps, cloud & DevOps, AI/ML, UI/UX design, and custom software for startups, SMBs, and enterprises.`,
+  title: "Software & AI Solutions Services",
+  description: `${site.name} provides software solutions and AI solutions: web development, mobile apps, cloud & DevOps, AI/ML and LLM integration, UI/UX design, and custom enterprise software for startups, SMBs, and global enterprises.`,
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

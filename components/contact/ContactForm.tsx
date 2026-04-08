@@ -129,14 +129,14 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
         <button
           type="submit"
-          className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           Send inquiry
         </button>
-        <p className="text-xs text-muted">
+        <p className="min-w-0 flex-1 text-xs text-muted sm:max-w-md">
           By submitting, you agree to be contacted about this inquiry. Replace
           with your legal text before production.
         </p>

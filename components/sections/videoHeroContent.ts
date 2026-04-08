@@ -4,14 +4,14 @@
  */
 
 export const VIDEO_HERO_HEADLINE_CLASS =
-  "mt-0 text-left font-display text-[2rem] font-semibold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]";
+  "mt-0 text-left font-display text-[clamp(1.625rem,4.5vw+0.75rem,3.15rem)] font-semibold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.15rem]";
 
 export const VIDEO_HERO_SUBTEXT_CLASS =
-  "mt-6 max-w-2xl text-left text-base leading-relaxed text-stone-200 sm:text-lg";
+  "mt-5 max-w-2xl text-left text-[0.9375rem] leading-relaxed text-stone-200 sm:mt-6 sm:text-lg";
 
 /** Outer band: vertical center, header offset, consistent bottom padding. */
 export const VIDEO_HERO_CONTAINER_CLASS =
-  "relative z-10 flex h-full min-h-0 items-center pt-20 md:pt-24 pb-12 md:pb-16 lg:pb-20";
+  "relative z-10 flex h-full min-h-0 items-center pt-[calc(4.5rem+env(safe-area-inset-top,0px))] pb-10 sm:pb-12 md:pt-24 md:pb-16 lg:pb-20";
 
 /** Max width + left alignment for hero copy block. */
 export const VIDEO_HERO_COPY_WRAP_CLASS =

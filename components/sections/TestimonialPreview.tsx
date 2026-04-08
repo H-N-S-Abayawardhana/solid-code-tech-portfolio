@@ -25,11 +25,11 @@ export function TestimonialPreview() {
             </ButtonLink>
           }
         />
-        <ul className="grid gap-8 lg:grid-cols-2">
+        <ul className="grid gap-8 md:grid-cols-2">
           {preview.map((t, i) => (
             <li key={t.id}>
               <Reveal delay={0.08 * i}>
-                <figure className="h-full rounded-xl border border-border bg-background p-8 shadow-[var(--shadow-soft)]">
+                <figure className="h-full rounded-xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] sm:p-8">
                   <blockquote>
                     <p className="text-base leading-relaxed text-stone-800 sm:text-lg">
                       “{t.quote}”
