@@ -3,10 +3,11 @@
 export const homeHero = {
   headline:
     "Engineering the Digital Future For Every Business, Every Industry",
-  subheading:
-    "",
+  subheading: "",
   ctaPrimary: "Start a Project",
   ctaSecondary: "Explore Services",
+  /** Home hero secondary CTA — Services overview */
+  ctaSecondaryHref: "/services",
   footnote:
     "We partner with startups, SMBs, and enterprises—from discovery through launch and beyond. ",
   footnoteLinkLabel: "Read our process",

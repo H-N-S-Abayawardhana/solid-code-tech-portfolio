@@ -1,11 +1,14 @@
+/** Increment when replacing `public/solidcodelogo.png` so Next.js Image and browsers fetch the new file (same path is otherwise cached). */
+export const LOGO_CACHE_BUST = 2;
+
 export const site = {
   name: "SolidCode Technologies",
   shortName: "SolidCode",
-  logoSrc: "/solidcodelogo.png",
+  logoSrc: `/solidcodelogo.png?v=${LOGO_CACHE_BUST}`,
   tagline: "Built solid. Built to scale.",
   description:
-    "SolidCode Technologies is a full-stack software engineering company delivering web applications, mobile apps, cloud infrastructure, AI solutions, UI/UX design, and custom software.",
-  url: "https://solidcodetechnology.com",
+    "SolidCode Technologies builds software solutions and AI solutions for global businesses: web and mobile apps, cloud & DevOps, LLM-powered features, UI/UX, and custom enterprise systems—engineered for quality and scale.",
+  url: "https://www.solidcodetechnologies.com",
   email: "hello@solidcodetechnology.com",
   phone: "+1 (555) 014-2200",
   address: {
@@ -14,5 +17,10 @@ export const site = {
   },
   social: {
     linkedin: "https://www.linkedin.com/company/solid-code-technology",
+  },
+  /** wa.me uses international digits only (no +); national leading 0 omitted after country code 94 */
+  whatsapp: {
+    href: "https://wa.me/94743648116",
+    phoneDisplay: "+94 074 364 8116",
   },
 } as const;

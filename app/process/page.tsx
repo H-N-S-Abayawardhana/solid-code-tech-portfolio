@@ -8,6 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Process",
   description: `How ${site.name} delivers software: discovery, planning, design, development, testing, launch, and support—explained for international stakeholders.`,
+  alternates: { canonical: "/process" },
 };
 
 export default function ProcessPage() {

@@ -8,6 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Testimonials",
   description: `Client perspectives on working with ${site.name}: delivery discipline, integration work, and long-term support.`,
+  alternates: { canonical: "/testimonials" },
 };
 
 export default function TestimonialsPage() {

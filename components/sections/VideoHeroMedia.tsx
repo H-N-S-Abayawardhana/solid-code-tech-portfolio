@@ -1,7 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { LazyVideo } from "lazyvid";
+import { useEffect } from "react";
+
+/** `lazyvid` keeps an internal ref; we target the element by id for playback-rate hooks. */
+const VIDEO_HERO_DOM_ID = "solidcode-hero-video";
 
 /** Same band height as home hero — keep pages visually aligned. */
 export const VIDEO_HERO_BAND_CLASS =
@@ -26,11 +30,11 @@ export function VideoHeroMedia({
   playbackRate = DEFAULT_VIDEO_PLAYBACK_RATE,
   prefersReducedMotion,
 }: VideoHeroMediaProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
     if (prefersReducedMotion) return;
-    const v = videoRef.current;
+    const v = document.getElementById(
+      VIDEO_HERO_DOM_ID,
+    ) as HTMLVideoElement | null;
     if (!v) return;
 
     const applyRate = () => {
@@ -75,18 +79,19 @@ export function VideoHeroMedia({
   }
 
   return (
-    <video
-      ref={videoRef}
+    <LazyVideo
+      key={videoSrc}
+      id={VIDEO_HERO_DOM_ID}
       className="absolute inset-0 h-full w-full object-cover object-center"
+      sources={[{ type: "video/mp4", src: videoSrc }]}
       autoPlay
       muted
       loop
       playsInline
       poster={posterSrc}
+      preload="none"
       aria-hidden
-    >
-      <source src={videoSrc} type="video/mp4" />
-    </video>
+    />
   );
 }
 

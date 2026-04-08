@@ -10,9 +10,18 @@ import { WhoWeServe } from "@/components/sections/WhoWeServe";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Software Solutions & AI Solutions",
   description:
-    "SolidCode Technologies is a full-stack software engineering company: web, mobile, cloud, AI, UI/UX, and custom software—built solid, built to scale.",
+    "SolidCode Technologies delivers software solutions and AI solutions: custom web and mobile apps, cloud & DevOps, LLM and ML features, UI/UX, and enterprise systems for startups to global enterprises.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Software Solutions & AI Solutions | SolidCode Technologies",
+    description:
+      "Partner with SolidCode for end-to-end software solutions and AI solutions—built for reliability, security, and scale.",
+    url: "/",
+  },
 };
 
 export default function HomePage() {

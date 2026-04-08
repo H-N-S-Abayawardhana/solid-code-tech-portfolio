@@ -9,6 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Portfolio",
   description: `Case-study style project summaries from ${site.name}: SaaS, e-commerce, corporate sites, dashboards, and mobile apps.`,
+  alternates: { canonical: "/portfolio" },
 };
 
 export default function PortfolioPage() {

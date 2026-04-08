@@ -9,6 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description: `Learn about ${site.name}: mission, values, and how we work with international clients on custom software and digital transformation.`,
+  alternates: { canonical: "/about" },
 };
 
 const values = [
