@@ -32,7 +32,7 @@ export function SectionHeader({
         ) : null}
         <h2
           id={titleId}
-          className="font-display text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl"
+          className="font-display text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl md:text-4xl"
         >
           {title}
         </h2>

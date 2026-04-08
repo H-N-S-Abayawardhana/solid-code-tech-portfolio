@@ -20,6 +20,7 @@ export const viewport: Viewport = {
   themeColor: "#0d9488",
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -32,7 +33,7 @@ export default function RootLayout({
       lang="en-GB"
       className={`${poppins.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="relative min-h-full flex flex-col bg-background text-foreground">
+      <body className="relative flex min-h-dvh flex-col bg-background text-foreground">
         <SiteJsonLd />
         <a
           href="#main-content"

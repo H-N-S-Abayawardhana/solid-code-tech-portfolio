@@ -64,7 +64,7 @@ export function FloatingActions() {
 
   return (
     <div
-      className="pointer-events-none fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8"
+      className="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] z-40 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8"
       aria-live="polite"
     >
       {showBackToTop ? (

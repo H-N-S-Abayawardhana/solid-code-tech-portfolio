@@ -124,13 +124,16 @@ export function Header() {
 
   return (
     <>
-      <div className="h-16 shrink-0 md:h-20" aria-hidden />
+      <div
+        className="shrink-0 h-[calc(4rem+env(safe-area-inset-top,0px))] md:h-[calc(5rem+env(safe-area-inset-top,0px))]"
+        aria-hidden
+      />
       <header
-        className={`fixed left-0 right-0 top-0 z-50 border-b border-transparent bg-transparent ${headerMotion} ${
+        className={`fixed left-0 right-0 top-0 z-50 border-b border-transparent bg-transparent pt-[env(safe-area-inset-top,0px)] ${headerMotion} ${
           hideHeader ? "-translate-y-full pointer-events-none" : "translate-y-0"
         }`}
       >
-      <Container className="flex h-16 items-center justify-between gap-4 md:h-20">
+      <Container className="flex h-16 items-center justify-between gap-3 sm:gap-4 md:h-20">
         <Logo variant="header" />
 
         <nav

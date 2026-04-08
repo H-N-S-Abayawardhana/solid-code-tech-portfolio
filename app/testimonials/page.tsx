@@ -19,10 +19,10 @@ export default function TestimonialsPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Testimonials
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium tracking-tight text-stone-900 md:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl md:text-5xl">
             Feedback from the people who sponsor the work.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
             Quotes below are illustrative placeholders with realistic tone—swap
             for approved client references when available.
           </p>

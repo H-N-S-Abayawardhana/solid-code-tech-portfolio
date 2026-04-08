@@ -20,10 +20,10 @@ export default function PortfolioPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Portfolio
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium tracking-tight text-stone-900 md:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl md:text-5xl">
             Work structured like case studies—not screenshot galleries.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
             The examples below are realistic placeholders for agency presentation.
             Replace summaries, stacks, and outcomes with your confidential
             client work when permitted.

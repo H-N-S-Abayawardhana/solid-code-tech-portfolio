@@ -33,7 +33,7 @@ export function Logo({ variant = "header", className = "" }: LogoProps) {
         width={w}
         height={h}
         priority={variant === "header"}
-        className={`w-auto max-w-[min(100%,24rem)] object-contain object-left ${heightClass} sm:max-w-[28rem]`}
+        className={`w-auto max-w-[min(100%,14rem)] object-contain object-left sm:max-w-[min(100%,22rem)] md:max-w-[28rem] ${heightClass}`}
       />
     </Link>
   );
