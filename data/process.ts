@@ -10,56 +10,56 @@ export const processSteps: ProcessStep[] = [
     step: 1,
     title: "Discovery",
     summary:
-      "We align on goals, constraints, stakeholders, and what success looks like in measurable terms.",
+      "We align on goals, constraints, and what success looks like — before writing a single line of code.",
     detail:
-      "Workshops, system reviews, and light documentation of current workflows. You receive a concise findings note and a proposed scope boundary.",
+      "Stakeholder workshops, system audits, and user research. You receive a clear findings summary and a well-defined scope boundary so there are no surprises later.",
   },
   {
     step: 2,
     title: "Planning",
     summary:
-      "Architecture, milestones, and risk are made explicit before significant build work begins.",
+      "Architecture, milestones, and risks are defined upfront — giving you a roadmap you can trust.",
     detail:
-      "Technical approach, integration map, environment strategy, and a delivery plan your team can defend internally.",
+      "Technical architecture, integration maps, environment strategy, and a delivery plan your team can follow and defend at every stage.",
   },
   {
     step: 3,
     title: "Design",
     summary:
-      "UX structure and visual language are validated with the people who will use the software.",
+      "UX flows and visual design are validated with real users before development begins.",
     detail:
-      "Wireframes evolve into high-fidelity screens and a component approach developers can implement without guesswork.",
+      "Wireframes evolve into high-fidelity screens and a component system that developers can implement without guesswork — reducing rework and speeding delivery.",
   },
   {
     step: 4,
     title: "Development",
     summary:
-      "Incremental builds with demos, code review, and automated checks integrated from the start.",
+      "Incremental, reviewable builds with continuous integration and weekly demos.",
     detail:
-      "Regular integration into shared environments; feature flags where needed; traceability from requirement to release.",
+      "Clean code, automated testing, and regular deployments to shared environments. You see real progress every week — not just at the end.",
   },
   {
     step: 5,
     title: "Testing",
     summary:
-      "Functional, regression, and performance checks tied to acceptance criteria—not ad hoc clicking.",
+      "Rigorous QA tied to acceptance criteria — functional, regression, performance, and security.",
     detail:
-      "Test plans cover critical paths, edge cases, and integrations. Security-sensitive areas receive targeted review.",
+      "Every critical path, edge case, and integration is tested systematically. Security-sensitive areas receive dedicated review before release.",
   },
   {
     step: 6,
     title: "Launch",
     summary:
-      "Cutover planning, monitoring, rollback options, and communication with support teams.",
+      "Smooth go-live with runbooks, monitoring, rollback plans, and a dedicated hypercare window.",
     detail:
-      "Go-live runbooks, hypercare window, and handover sessions so your organisation owns day-two operations confidently.",
+      "Cutover is planned and rehearsed. Your team receives handover sessions and documentation so you own day-two operations with confidence.",
   },
   {
     step: 7,
     title: "Support",
     summary:
-      "Structured maintenance, roadmap input, and measured improvement after release.",
+      "Ongoing maintenance, proactive improvements, and a partner who stays invested after launch.",
     detail:
-      "SLA-backed response, dependency and patch cadence, and quarterly reviews against usage and incident data.",
+      "SLA-backed response times, regular dependency updates, and quarterly reviews against real usage data — so your product keeps improving over time.",
   },
 ];

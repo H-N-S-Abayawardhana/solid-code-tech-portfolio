@@ -4,8 +4,8 @@ import { site } from "@/lib/site";
 export const aboutPageHero = {
   videoSrc: "/about.mp4",
   posterSrc: "/heroimg.jpg",
-  title: "A software partner for organisations that cannot afford ambiguity.",
-  belowStrip: `${site.name} exists to help businesses ship reliable digital products and internal systems—with engineering judgement, design craft, and communication that stands up in board-level conversations. Want to go deeper on how we work and who we are? Explore the sections below—or reach out directly.`,
+  title: "We build software that businesses depend on.",
+  belowStrip: `${site.name} is a technology company built on one belief — great software changes everything. We partner with startups, growing businesses, and enterprises to deliver mobile apps, web platforms, AI solutions, and enterprise systems that are engineered for quality and built to last.`,
   /** Faster than the default 0.3 used on home/services — tune 0.5–1 as you like. */
   playbackRate: 0.82,
 } as const;

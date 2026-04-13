@@ -27,6 +27,14 @@ const categoryLabel: Record<ProjectCategory, string> = {
   "Mobile app": "Mobile App",
 };
 
+const categoryDot: Record<ProjectCategory, string> = {
+  "SaaS platform": "bg-teal-500",
+  "E-commerce": "bg-indigo-500",
+  "Corporate website": "bg-stone-500",
+  "Business dashboard": "bg-violet-500",
+  "Mobile app": "bg-cyan-500",
+};
+
 const containerVariants = {
   hidden: {},
   visible: {
@@ -66,10 +74,11 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
   }
 
   const CardInner = (
-    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-xl border border-border bg-background transition-colors duration-300 hover:border-stone-300/90">
-      {/* Cover image / gradient banner */}
+    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-[var(--shadow-soft)] transition-[border-color,box-shadow] duration-300 hover:border-stone-300/90 hover:shadow-lg">
+
+      {/* Cover image */}
       <motion.div
-        className="relative h-48 w-full shrink-0 overflow-hidden"
+        className="relative h-52 w-full shrink-0 overflow-hidden"
         variants={reduce ? undefined : itemVariants}
       >
         {project.image ? (
@@ -78,20 +87,40 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          <div
-            className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${gradient}`}
-          >
+          <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${gradient}`}>
             <span className="text-xs font-semibold uppercase tracking-widest text-white/70">
               {categoryLabel[project.category]}
             </span>
           </div>
         )}
-        <span className="absolute left-3 top-3 rounded-md bg-black/50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+        {/* Dark overlay on hover */}
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
+
+        {/* Category badge */}
+        <span className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+          <span className={`h-1.5 w-1.5 rounded-full ${categoryDot[project.category]}`} />
           {project.category}
         </span>
+
+        {/* Live link badge */}
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white shadow transition-opacity hover:opacity-90"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white" />
+            </span>
+            Live
+          </a>
+        )}
       </motion.div>
 
       {/* Card body */}
@@ -103,7 +132,7 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
         viewport={{ once: true, margin: "-30px" }}
       >
         <motion.h3
-          className="font-display text-xl font-semibold leading-snug tracking-tight text-stone-900"
+          className="font-display text-xl font-semibold leading-snug tracking-tight text-stone-900 transition-colors group-hover:text-accent"
           variants={reduce ? undefined : itemVariants}
         >
           {project.title}
@@ -118,6 +147,7 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
 
         <div className="min-h-0 flex-1" aria-hidden />
 
+        {/* Stack tags */}
         <motion.ul
           className="mt-5 flex shrink-0 flex-wrap gap-2"
           aria-label="Technology stack"
@@ -126,7 +156,7 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
           {project.stack.map((t) => (
             <motion.li
               key={t}
-              className="cursor-default rounded-md border border-border bg-stone-50 px-2.5 py-1 text-xs font-medium text-stone-600"
+              className="cursor-default rounded-full border border-border bg-stone-50 px-3 py-1 text-xs font-medium text-stone-600"
               variants={reduce ? undefined : tagVariants}
               initial="rest"
               whileHover="hover"
@@ -136,19 +166,27 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
           ))}
         </motion.ul>
 
-        <motion.p
-          className="mt-5 shrink-0 border-t border-border pt-4 text-sm font-medium text-stone-800"
+        {/* Outcome */}
+        <motion.div
+          className="mt-5 shrink-0 flex items-start gap-3 rounded-xl border border-border bg-stone-50/80 p-4"
           variants={reduce ? undefined : itemVariants}
         >
-          Outcome:{" "}
-          <span className="font-normal text-muted">{project.outcome}</span>
-        </motion.p>
+          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <p className="text-xs leading-relaxed text-muted sm:text-sm">
+            <span className="font-semibold text-stone-800">Outcome: </span>
+            {project.outcome}
+          </p>
+        </motion.div>
       </motion.div>
     </article>
   );
 
   const linkClass =
-    "group flex h-full min-h-0 w-full flex-col rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "group flex h-full min-h-0 w-full flex-col rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   if (reduce) {
     return (
@@ -161,24 +199,23 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
   return (
     <motion.div
       className="relative flex h-full min-h-0 w-full flex-col"
-      whileHover={{ y: -4 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={{ y: -5 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
       onClick={handleClick}
     >
-      {/* Expanding ring on click */}
       <AnimatePresence>
         {clicked && (
           <motion.span
             key={rippleKey}
-            className="pointer-events-none absolute inset-0 rounded-xl"
+            className="pointer-events-none absolute inset-0 rounded-2xl"
             initial={{ opacity: 0.7, scale: 1 }}
-            animate={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 0, scale: 1.05 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              border: "2px solid rgb(13 148 136)", // accent teal
-              boxShadow: "0 0 0 4px rgba(13,148,136,0.18), 0 0 20px 4px rgba(13,148,136,0.12)",
+              border: "2px solid rgb(13 148 136)",
+              boxShadow: "0 0 0 4px rgba(13,148,136,0.15), 0 0 20px 4px rgba(13,148,136,0.10)",
             }}
           />
         )}

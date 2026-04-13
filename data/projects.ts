@@ -31,14 +31,14 @@ export const projects: Project[] = [
     image: "/taxi.png",
   },
   {
-    slug: "realtime-messaging-app",
-    title: "Real-Time Messaging App — Flutter",
+    slug: "gym-mobile-app",
+    title: "Gym Management App — Flutter",
     category: "Mobile app",
     summary:
-      "A real-time messaging application built with a strong architectural foundation, supporting live communication with instant message delivery and scalable state management.",
-    stack: ["Flutter", "Dart", "BLoC", "WebSockets", "Firebase", "Clean Architecture"],
+      "A feature-rich gym management mobile application built with Flutter, enabling members to track workouts, manage memberships, book classes, and monitor fitness progress in real time.",
+    stack: ["Flutter", "Dart", "BLoC", "Firebase", "Clean Architecture"],
     outcome:
-      "Delivered a fully functional messaging system with live updates, predictable state management via BLoC, and a Clean Architecture foundation built for long-term scalability.",
+      "Delivered a fully functional gym management app with smooth performance on both iOS and Android, streamlining member management and improving the overall fitness experience.",
     featured: true,
     image: "/gym.png",
   },

@@ -1,5 +1,5 @@
 /** Increment when replacing `public/solidcodelogo.png` so Next.js Image and browsers fetch the new file (same path is otherwise cached). */
-export const LOGO_CACHE_BUST = 3;
+export const LOGO_CACHE_BUST = 4;
 
 export const site = {
   name: "SolidCode Technologies",
@@ -17,7 +17,7 @@ export const site = {
     line2: "Colombo, Sri Lanka",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/solid-code-technology",
+    linkedin: "https://www.linkedin.com/company/solid-code-technologies/posts/?feedView=all",
   },
   /** wa.me uses international digits only (no +); national leading 0 omitted after country code 94 */
   whatsapp: {

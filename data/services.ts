@@ -2,9 +2,9 @@
 export const servicesPageHero = {
   videoSrc: "/services-hero.mp4",
   posterSrc: "/heroimg.jpg",
-  title: "Capabilities that cover the full product lifecycle.",
+  title: "End-to-end software services, engineered for scale.",
   belowStrip:
-    "Each engagement is scoped to your context. Below is how we typically structure offerings—benefits you can evaluate, and client profiles that tend to see the strongest fit. Questions about scope or timelines? We are happy to recommend a sensible first step.",
+    "From concept to production — we cover every layer of the modern software stack. Explore our services below and find the right fit for your project.",
 } as const;
 
 export type Service = {
