@@ -39,7 +39,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -48,7 +48,7 @@ const tagVariants = {
   hover: {
     scale: 1.07,
     backgroundColor: "rgb(212 212 216)",
-    transition: { type: "spring", stiffness: 400, damping: 18 },
+    transition: { type: "spring" as const, stiffness: 400, damping: 18 },
   },
 };
 
