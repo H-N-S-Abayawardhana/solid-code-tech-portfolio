@@ -99,9 +99,9 @@ export const homeSections = {
   },
   projects: {
     eyebrow: "Work",
-    title: "Recent engagements",
+    title: "Recent Projects",
     description:
-      "Examples below are representative placeholders. Each engagement was structured around defined milestones and acceptance criteria.",
+      "A selection of projects we have delivered — across mobile, web, AI, and enterprise platforms.",
   },
   process: {
     eyebrow: "Our process",
@@ -116,10 +116,10 @@ export const homeSections = {
       "Feedback from programme sponsors. Names and organisations are sample placeholders for layout.",
   },
   finalCta: {
-    title: "Ready to outline your next release?",
+    title: "Let's build something great together.",
     body:
-      "Send a short brief: goals, timeline, and constraints. We reply within two business days with next steps or a polite no if we are not the right fit.",
-    primary: "Contact us",
-    secondary: "Browse services",
+      "Tell us about your project — your goals, timeline, and challenges. We'll get back to you within one business day with a clear path forward.",
+    primary: "Start a Project",
+    secondary: "Browse Services",
   },
 } as const;

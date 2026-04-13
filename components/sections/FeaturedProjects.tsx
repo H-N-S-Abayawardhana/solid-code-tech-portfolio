@@ -9,9 +9,12 @@ import { featuredProjects } from "@/data/projects";
 export function FeaturedProjects() {
   return (
     <section
-      className="bg-stone-50 py-20 md:py-28"
+      className="relative bg-stone-50 py-20 md:py-28 overflow-hidden"
       aria-labelledby="featured-projects-heading"
     >
+      {/* Subtle decorative gradient */}
+      <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/5 blur-3xl" aria-hidden />
       <Container>
         <SectionHeader
           eyebrow={homeSections.projects.eyebrow}

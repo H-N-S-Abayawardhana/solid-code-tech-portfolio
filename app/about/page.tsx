@@ -31,21 +31,42 @@ const values = [
   },
 ];
 
-const leadership = [
+const strengths = [
   {
-    name: "James Whitmore",
-    role: "Managing Director",
-    bio: "Former engineering lead for multi-region SaaS platforms; focuses on delivery governance and client steering committees.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /><line x1="15" y1="4" x2="9" y2="20" />
+      </svg>
+    ),
+    title: "Engineering Excellence",
+    body: "Clean architecture, rigorous code review, and production-grade standards on every project — no shortcuts.",
   },
   {
-    name: "Priya Natarajan",
-    role: "Head of Delivery",
-    bio: "Brings structured agile and enterprise PMO experience; owns resourcing, risk registers, and executive reporting.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+      </svg>
+    ),
+    title: "Fast Delivery",
+    body: "Focused sprints, continuous deployment, and weekly demos — we move at speed without compromising quality.",
   },
   {
-    name: "Daniel Fischer",
-    role: "Principal Architect",
-    bio: "Designs integration-heavy systems and cloud estates with an emphasis on security, cost transparency, and operability.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+    title: "Client Partnership",
+    body: "We work as an extension of your team — transparent communication, honest timelines, and zero surprises.",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V12h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2v1.5c1.2.7 2 2 2 3.5a4 4 0 0 1-8 0c0-1.5.8-2.8 2-3.5V17H8a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2h2V9.5C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4z" />
+      </svg>
+    ),
+    title: "AI-Ready Expertise",
+    body: "From LLM integrations to machine learning pipelines, we bring real AI capability — not just buzzwords.",
   },
 ];
 
@@ -67,16 +88,15 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-7 space-y-6 text-base leading-relaxed text-muted">
               <p>
-                We are a multidisciplinary team of product strategists,
-                designers, and engineers working across web, mobile, and cloud.
-                Most of our clients operate internationally: they need vendors
-                who understand compliance context, stakeholder diversity, and
-                the reality of legacy systems.
+                SolidCode Technologies is a software development company based
+                in Battaramulla, Sri Lanka — built by engineers who care deeply
+                about code quality, user experience, and delivering software
+                that actually works in production.
               </p>
               <p>
-                We are intentionally mid-sized. That keeps principals close to
-                delivery and avoids the account-manager layers that slow
-                decisions on complex builds.
+                We work with startups, growing businesses, and enterprises
+                across mobile, web, AI, and cloud — bringing the same
+                commitment to quality to every engagement, regardless of size.
               </p>
             </div>
           </div>
@@ -98,8 +118,9 @@ export default function AboutPage() {
                   Mission
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted">
-                  To deliver software that organisations depend on—clearly
-                  specified, carefully built, and straightforward to evolve.
+                  To deliver world-class software solutions that empower every
+                  business — big or small — to grow, compete, and succeed in
+                  the digital age.
                 </p>
               </article>
             </Reveal>
@@ -109,9 +130,8 @@ export default function AboutPage() {
                   Vision
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted">
-                  To be the first call for teams who have outgrown improvised
-                  tools and generic agencies, and need a partner that combines
-                  strategic calm with technical depth.
+                  To become a globally trusted technology partner known for
+                  code quality, innovation, and lasting client relationships.
                 </p>
               </article>
             </Reveal>
@@ -128,11 +148,11 @@ export default function AboutPage() {
           <Reveal>
             <div className="rounded-lg border border-border bg-stone-50/80 p-8 md:p-10">
               <p className="text-base leading-relaxed text-muted md:text-lg">
-                Our clients are not buying slides—they are buying working
-                software in production. That requires honest estimates,
-                disciplined execution, and respect for the people who will run
-                and extend the system for years. That standard guides every
-                engagement we accept.
+                We started SolidCode Technologies because we believe every
+                business deserves software that is built right — not just built
+                fast. Every product we ship is something we are proud to put
+                our name on. That standard drives every decision we make, from
+                architecture to deployment.
               </p>
             </div>
           </Reveal>
@@ -177,13 +197,13 @@ export default function AboutPage() {
           />
           <Reveal>
             <p className="max-w-3xl text-base leading-relaxed text-muted md:text-lg">
-              Early work focused on replacing fragile internal tools for
-              operations and finance teams. As integrations grew more complex,
-              we invested in cloud architecture, security practice, and design
-              operations. Today we support SaaS companies, industrial firms, and
-              professional services networks across Europe, the Middle East, and
-              North America—always with the same emphasis on clarity and
-              long-term maintainability.
+              SolidCode Technologies was founded with a simple belief: great
+              software changes everything. We started by building mobile apps
+              and web platforms for local businesses in Sri Lanka, and quickly
+              expanded our capabilities to include AI-powered applications,
+              cloud infrastructure, and enterprise-grade systems. Today we
+              serve clients globally — always with the same focus on quality,
+              transparency, and long-term partnership.
             </p>
           </Reveal>
         </Container>
@@ -191,34 +211,27 @@ export default function AboutPage() {
 
       <section
         className="border-t border-border bg-background py-16 md:py-24"
-        aria-labelledby="leadership-heading"
+        aria-labelledby="strengths-heading"
       >
         <Container>
           <SectionHeader
-            titleId="leadership-heading"
-            title="Leadership"
-            description="Representative profiles for presentation. Replace names, roles, and biographies with your actual leadership team."
+            titleId="strengths-heading"
+            title="What sets us apart"
+            description="We combine deep technical expertise with a genuine commitment to your success — every time."
           />
-          <ul className="grid gap-8 md:grid-cols-3">
-            {leadership.map((person, i) => (
-              <li key={person.name}>
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {strengths.map((s, i) => (
+              <li key={s.title}>
                 <Reveal delay={0.06 * i}>
-                  <article className="h-full rounded-lg border border-border p-6">
-                    <div
-                      className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-stone-100 text-sm font-semibold text-stone-600"
-                      aria-hidden
-                    >
-                      {person.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
+                  <article className="h-full rounded-xl border border-border bg-stone-50/60 p-6 transition-[border-color,box-shadow] duration-300 hover:border-stone-300/90 hover:shadow-md">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                      {s.icon}
                     </div>
-                    <h3 className="mt-5 font-display text-lg font-medium text-stone-900">
-                      {person.name}
+                    <h3 className="mt-4 font-display text-base font-semibold text-stone-900">
+                      {s.title}
                     </h3>
-                    <p className="text-sm font-medium text-accent">{person.role}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">
-                      {person.bio}
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      {s.body}
                     </p>
                   </article>
                 </Reveal>
@@ -232,10 +245,10 @@ export default function AboutPage() {
         <Container>
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <p className="max-w-xl text-lg text-stone-200">
-              Ready to explore fit for your next programme?
+              Ready to work with a team that takes quality as seriously as you do?
             </p>
             <ButtonLink href="/contact" variant="inverse">
-              Contact us
+              Let's talk
             </ButtonLink>
           </div>
         </Container>

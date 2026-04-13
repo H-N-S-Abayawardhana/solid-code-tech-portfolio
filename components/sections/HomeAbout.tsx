@@ -3,6 +3,13 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { homeAbout } from "@/data/home";
 
+const stats = [
+  { value: "10+", label: "Projects Delivered" },
+  { value: "6+", label: "Technologies Mastered" },
+  { value: "3+", label: "Countries Served" },
+  { value: "100%", label: "Client Satisfaction" },
+];
+
 export function HomeAbout() {
   return (
     <section
@@ -22,6 +29,16 @@ export function HomeAbout() {
                 <p className="text-base leading-relaxed text-muted sm:text-lg">{p}</p>
               </Reveal>
             ))}
+            <Reveal delay={0.16}>
+              <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                {stats.map((s) => (
+                  <li key={s.label} className="rounded-xl border border-border bg-background p-4 text-center shadow-[var(--shadow-soft)]">
+                    <p className="font-display text-3xl font-bold text-accent">{s.value}</p>
+                    <p className="mt-1 text-xs font-medium text-muted">{s.label}</p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
           <div className="flex flex-col gap-6 lg:col-span-5">
             <Reveal delay={0.08}>

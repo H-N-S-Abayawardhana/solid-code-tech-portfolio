@@ -21,12 +21,10 @@ export default function PortfolioPage() {
             Portfolio
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl md:text-5xl">
-            Work structured like case studies—not screenshot galleries.
+            Real projects. Real outcomes.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            The examples below are realistic placeholders for agency presentation.
-            Replace summaries, stacks, and outcomes with your confidential
-            client work when permitted.
+            A curated selection of the software we have designed, built, and shipped — from mobile apps and AI platforms to marketplaces and enterprise tools.
           </p>
         </Container>
       </section>
@@ -55,11 +53,10 @@ export default function PortfolioPage() {
       <section className="border-t border-border bg-stone-900 py-14 md:py-16">
         <Container className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <p className="max-w-xl text-lg text-stone-200">
-            Under NDA for your sector? We can walk through anonymised parallels
-            in a private session.
+            Have a project in mind? Let's talk about how we can help you build it.
           </p>
           <ButtonLink href="/contact" variant="inverse">
-            Request a briefing
+            Get in touch
           </ButtonLink>
         </Container>
       </section>
