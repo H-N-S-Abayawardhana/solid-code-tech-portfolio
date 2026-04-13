@@ -1,19 +1,20 @@
 /** Increment when replacing `public/solidcodelogo.png` so Next.js Image and browsers fetch the new file (same path is otherwise cached). */
-export const LOGO_CACHE_BUST = 2;
+export const LOGO_CACHE_BUST = 3;
 
 export const site = {
   name: "SolidCode Technologies",
   shortName: "SolidCode",
-  logoSrc: `/solidcodelogo.png?v=${LOGO_CACHE_BUST}`,
+  logoSrc: `/logo.PNG?v=${LOGO_CACHE_BUST}`,
+  logoDarkSrc: `/logo-dark.PNG?v=${LOGO_CACHE_BUST}`,
   tagline: "Built solid. Built to scale.",
   description:
     "SolidCode Technologies builds software solutions and AI solutions for global businesses: web and mobile apps, cloud & DevOps, LLM-powered features, UI/UX, and custom enterprise systems—engineered for quality and scale.",
   url: "https://www.solidcodetechnologies.com",
-  email: "hello@solidcodetechnology.com",
-  phone: "+1 (555) 014-2200",
+  email: "info@solidcodetechnologies.com",
+  phone: "+94 074 364 8116",
   address: {
-    line1: "120 Innovation Quarter",
-    line2: "London EC2A 4NE, United Kingdom",
+    line1: "Battaramulla",
+    line2: "Colombo, Sri Lanka",
   },
   social: {
     linkedin: "https://www.linkedin.com/company/solid-code-technology",

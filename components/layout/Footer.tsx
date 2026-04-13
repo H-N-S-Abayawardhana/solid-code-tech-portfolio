@@ -84,19 +84,10 @@ export function Footer() {
             </address>
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-4 border-t border-stone-200/90 pt-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 border-t border-stone-200/90 pt-10 text-sm text-muted text-center">
           <p className="text-stone-600">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-stone-500">
-            <span>Placeholder contact details</span>
-            <Link
-              href="/contact"
-              className="text-stone-600 hover:text-accent"
-            >
-              Privacy (sample)
-            </Link>
-          </div>
         </div>
       </Container>
     </footer>

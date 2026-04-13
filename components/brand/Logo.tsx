@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
 
 type LogoProps = {
@@ -11,15 +12,20 @@ type LogoProps = {
 
 const dimensions = {
   header: { w: 400, h: 92 },
-  footer: { w: 220, h: 52 },
+  footer: { w: 320, h: 80 },
 } as const;
 
+const DARK_LOGO_PATHS = ["/portfolio", "/contact"];
+
 export function Logo({ variant = "header", className = "" }: LogoProps) {
+  const pathname = usePathname();
+  const useDark = variant === "footer" || DARK_LOGO_PATHS.some((p) => pathname.startsWith(p));
+  const logoSrc = useDark ? site.logoDarkSrc : site.logoSrc;
   const { w, h } = dimensions[variant];
   const heightClass =
     variant === "header"
       ? "h-[3.75rem] sm:h-16 md:h-[4.75rem]"
-      : "h-10 sm:h-11";
+      : "h-14 sm:h-16";
 
   return (
     <Link
@@ -28,7 +34,7 @@ export function Logo({ variant = "header", className = "" }: LogoProps) {
       aria-label={`${site.name} — Home`}
     >
       <Image
-        src={site.logoSrc}
+        src={logoSrc}
         alt=""
         width={w}
         height={h}

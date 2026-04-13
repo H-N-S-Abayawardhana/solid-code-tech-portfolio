@@ -8,6 +8,23 @@ const nextConfig: NextConfig = {
         pathname: "/solidcodelogo.png",
         search: `?v=${LOGO_CACHE_BUST}`,
       },
+      {
+        pathname: "/logo.PNG",
+        search: `?v=${LOGO_CACHE_BUST}`,
+      },
+      {
+        pathname: "/logo-dark.PNG",
+        search: `?v=${LOGO_CACHE_BUST}`,
+      },
+      {
+        pathname: "/projects/**",
+      },
+      {
+        pathname: "/*.png",
+      },
+      {
+        pathname: "/*.jpg",
+      },
     ],
   },
 };

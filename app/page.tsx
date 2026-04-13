@@ -5,7 +5,7 @@ import { HomeAbout } from "@/components/sections/HomeAbout";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { ProcessPreview } from "@/components/sections/ProcessPreview";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
-import { TestimonialPreview } from "@/components/sections/TestimonialPreview";
+// import { TestimonialPreview } from "@/components/sections/TestimonialPreview";
 import { WhoWeServe } from "@/components/sections/WhoWeServe";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 
@@ -34,7 +34,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <FeaturedProjects />
       <ProcessPreview />
-      <TestimonialPreview />
+      {/* <TestimonialPreview /> */}
       <FinalCta />
     </>
   );
