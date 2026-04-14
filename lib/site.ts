@@ -11,7 +11,7 @@ export const site = {
     "SolidCode Technologies builds software solutions and AI solutions for global businesses: web and mobile apps, cloud & DevOps, LLM-powered features, UI/UX, and custom enterprise systems—engineered for quality and scale.",
   url: "https://www.solidcodetechnologies.com",
   email: "info@solidcodetechnologies.com",
-  phone: "+94 074 364 8116",
+  phone: "+94 743648116",
   address: {
     line1: "Battaramulla",
     line2: "Colombo, Sri Lanka",
@@ -22,6 +22,6 @@ export const site = {
   /** wa.me uses international digits only (no +); national leading 0 omitted after country code 94 */
   whatsapp: {
     href: "https://wa.me/94743648116",
-    phoneDisplay: "+94 074 364 8116",
+    phoneDisplay: "+94 743648116",
   },
 } as const;
