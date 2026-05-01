@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     localPatterns: [
       { pathname: "/solidcodelogo.png" },
       { pathname: "/logo.PNG" },
-      { pathname: "/logo-dark.PNG" },
+      { pathname: "/logo.PNG" },
       { pathname: "/projects/**" },
       { pathname: "/*.png" },
       { pathname: "/*.jpg" },
