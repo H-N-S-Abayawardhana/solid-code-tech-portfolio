@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
+import { ContactHero } from "@/components/sections/ContactHero";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -83,35 +84,9 @@ const trustPoints = [
 export default function ContactPage() {
   return (
     <>
+    <ContactHero/>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden border-b border-border bg-stone-950 py-20 md:py-28">
-        <div className="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-accent/10 blur-3xl" aria-hidden />
-        <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-accent/5 blur-3xl" aria-hidden />
-        <Container className="relative">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Get in touch
-          </p>
-          <h1 className="mt-4 max-w-3xl font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-            Let's build something great together.
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-stone-400 sm:text-lg">
-            Tell us about your project — your goals, timeline, and challenges. We'll get back to you within one business day with a clear path forward.
-          </p>
-
-          {/* Trust pills */}
-          <ul className="mt-8 flex flex-wrap gap-3">
-            {trustPoints.map((t) => (
-              <li
-                key={t.text}
-                className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-stone-300"
-              >
-                <span className="text-accent">{t.icon}</span>
-                {t.text}
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
+     
 
       {/* ── Main Content ── */}
       <section className="py-16 md:py-24" aria-labelledby="contact-form-heading">
