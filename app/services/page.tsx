@@ -188,7 +188,7 @@ export default function ServicesPage() {
                 <ButtonLink href="/contact" variant="inverse">
                   Book a free consultation
                 </ButtonLink>
-                <ButtonLink href="/portfolio" variant="secondary" className="border-stone-600 !text-stone-300 hover:border-stone-500 hover:bg-white/5">
+                <ButtonLink href="/portfolio" variant="inverse" className="border-stone-600 !text-stone-300 hover:border-stone-500 hover:bg-white/5">
                   See our work
                 </ButtonLink>
               </div>
