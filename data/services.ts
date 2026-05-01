@@ -107,6 +107,21 @@ export const services: Service[] = [
     idealClients:
       "Organizations replacing spreadsheets, legacy tools, or fragmented systems with purpose-built software.",
   },
+  {
+    id: "social-media-marketing",
+    title: "Social Media Marketing",
+    summary:
+      "Strategic digital presence and performance marketing to scale your brand's reach.",
+    description:
+      "We combine data-driven strategy with creative storytelling to amplify your brand across digital channels. From community management to high-conversion paid social campaigns, we ensure your social presence drives tangible business growth and meaningful engagement.",
+    benefits: [
+      "Data-backed performance marketing and ad-spend optimization",
+      "Strategic content planning aligned with brand identity",
+      "In-depth analytics and monthly growth reporting",
+    ],
+    idealClients:
+      "Brands looking to scale their digital footprint, launch new products, or improve social ROI.",
+  },
 ];
 
 export function getServiceById(id: string): Service | undefined {

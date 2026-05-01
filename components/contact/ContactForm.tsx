@@ -158,6 +158,7 @@ export function ContactForm() {
             <option>Cloud & DevOps</option>
             <option>UI/UX Design</option>
             <option>Custom Software</option>
+            <option>Social Media Marketing</option>
             <option>Not sure yet</option>
           </select>
         </div>
