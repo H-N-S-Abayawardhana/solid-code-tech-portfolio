@@ -63,7 +63,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── Filter Bar ── */}
-      <div className="sticky top-16 z-40 border-b border-border bg-background/95 backdrop-blur-sm md:top-20">
+      <div className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm md:top-0 p-5">
         <Container>
           <div className="flex items-center gap-2 overflow-x-auto py-3 scrollbar-none">
             <span className="shrink-0 text-xs font-semibold uppercase tracking-wider text-stone-400">

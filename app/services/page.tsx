@@ -59,7 +59,7 @@ export default function ServicesPage() {
       <ServicesHero />
 
       {/* ── Service Quick Nav ── */}
-      <nav className="sticky top-16 z-40 border-b border-border bg-background/95 backdrop-blur-sm md:top-20" aria-label="Jump to service">
+      <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm md:top-0 p-5" aria-label="Jump to service">
         <Container>
           <ul className="flex gap-1 overflow-x-auto py-3 scrollbar-none">
             {services.map((s, i) => (
