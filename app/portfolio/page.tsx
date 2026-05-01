@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { projects, type ProjectCategory } from "@/data/projects";
+import { PortfolioHero } from "@/components/sections/PortfolioHero";
 
 const categories: ("All" | ProjectCategory)[] = [
   "All",
@@ -31,6 +32,7 @@ export default function PortfolioPage() {
 
   return (
     <>
+    <PortfolioHero/>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-border bg-stone-950 py-20 md:py-28">
         <div className="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-accent/10 blur-3xl" aria-hidden />
@@ -49,16 +51,7 @@ export default function PortfolioPage() {
           </Reveal>
 
           {/* Stats row */}
-          <Reveal delay={0.1}>
-            <ul className="mt-10 flex flex-wrap gap-8">
-              {stats.map((s) => (
-                <li key={s.label} className="flex items-baseline gap-2">
-                  <span className="font-display text-3xl font-bold text-accent">{s.value}</span>
-                  <span className="text-sm font-medium text-stone-400">{s.label}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+         
         </Container>
       </section>
 

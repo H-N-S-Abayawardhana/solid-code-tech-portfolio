@@ -21,7 +21,7 @@ function navLinkClass(active: boolean, light: boolean) {
   const activeMark = active
     ? light
       ? "underline decoration-white decoration-2 underline-offset-[6px]"
-      : "underline decoration-[#050a30] decoration-2 underline-offset-[6px]"
+      : "underline decoration-white decoration-2 underline-offset-[6px]"
     : "";
   if (light) {
     return active
@@ -29,8 +29,8 @@ function navLinkClass(active: boolean, light: boolean) {
       : "text-white/85 hover:text-white";
   }
   return active
-    ? `text-[#050a30] ${activeMark}`
-    : "text-stone-600 hover:text-[#050a30]";
+    ? `text-white ${activeMark}`
+    : "text-white hover:text-white/85";
 }
 
 function NavLink({
