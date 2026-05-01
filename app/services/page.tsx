@@ -51,6 +51,14 @@ const serviceIcons: Record<string, React.ReactNode> = {
       <line x1="15" y1="4" x2="9" y2="20" />
     </svg>
   ),
+  "social-media-marketing": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
+      {/* Megaphone / Announcement Icon */}
+      <path d="M18 8a3 3 0 0 1 0 6" />
+      <path d="M18 6a6 6 0 0 1 0 10" />
+      <path d="M2 10h3l7-5v14l-7-5H2z" />
+    </svg>
+  ),
 };
 
 export default function ServicesPage() {
