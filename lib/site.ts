@@ -5,7 +5,7 @@ export const site = {
   name: "SolidCode Technologies",
   shortName: "SolidCode",
   logoSrc: `/logo.PNG?v=${LOGO_CACHE_BUST}`,
-  logoDarkSrc: `/logo-dark.PNG?v=${LOGO_CACHE_BUST}`,
+  logoDarkSrc: `/logo.PNG?v=${LOGO_CACHE_BUST}`,
   tagline: "Built solid. Built to scale.",
   description:
     "SolidCode Technologies builds software solutions and AI solutions for global businesses: web and mobile apps, cloud & DevOps, LLM-powered features, UI/UX, and custom enterprise systems—engineered for quality and scale.",
